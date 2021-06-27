@@ -38,6 +38,7 @@ function Header() {
             ref={serchInputRef}
             type="text"
             className="flex-grow w-full focus:outline-none"
+            defaultValue={router.query.term}
           />
           <XIcon
             onClick={() => (serchInputRef.current.value = "")}
