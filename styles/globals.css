@@ -11,3 +11,15 @@
     @apply hover:underline cursor-pointer;
   }
 }
+::-webkit-scrollbar {
+  background: #f9f9f9;
+
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #a8a8a8;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
