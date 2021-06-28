@@ -6,6 +6,7 @@ import { MicrophoneIcon, ViewGridIcon } from "@heroicons/react/solid";
 import { SearchIcon } from "@heroicons/react/outline";
 import { useRef } from "react";
 import { useRouter } from "next/router";
+import { UserButton, useUser } from "@clerk/clerk-react";
 
 export default function Home() {
   const router = useRouter();
