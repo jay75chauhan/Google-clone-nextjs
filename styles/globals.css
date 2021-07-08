@@ -5,14 +5,14 @@
 
 @layer components {
   .btn {
-    @apply bg-[#f8f9fa]  p-3 rounded-lg ring-gray-200 text-sm  text-gray-800 hover:ring-1 focus:outline-none active:ring-gray-300 hover:shadow-md;
+    @apply bg-[#f8f9fa]  p-3 rounded-lg ring-gray-200 text-sm dark:bg-[#292A2D] dark:text-white  text-gray-800 hover:ring-1 focus:outline-none active:ring-gray-300 hover:shadow-md;
   }
   .link {
     @apply hover:underline cursor-pointer;
   }
 }
 ::-webkit-scrollbar {
-  background: #f9f9f9;
+  background: #111;
 
   width: 8px;
 }

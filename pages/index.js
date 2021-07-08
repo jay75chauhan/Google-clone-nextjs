@@ -2,12 +2,16 @@ import Head from "next/head";
 import Avatar from "../components/Avatar";
 import Image from "next/image";
 import Footer from "../components/Footer";
-import { MicrophoneIcon, ViewGridIcon } from "@heroicons/react/solid";
-import { SearchIcon } from "@heroicons/react/outline";
+import {
+  MicrophoneIcon,
+  ViewGridIcon,
+  SearchIcon,
+} from "@heroicons/react/solid";
+
 import { useRef } from "react";
 import { useRouter } from "next/router";
 import { UserButton, useUser } from "@clerk/clerk-react";
-
+import ThemeSwitch from "../components/ThemeSwitch";
 export default function Home() {
   const router = useRouter();
   const serchInputRef = useRef(null);
@@ -34,15 +38,14 @@ export default function Home() {
 
       {/* header */}
 
-      <header className="flex w-full p-5 justify-between text-sm text-gray-700">
+      <header className="flex w-full p-5 justify-between text-sm text-gray-700 dark:text-white">
         <div className="flex space-x-4 items-center  ">
-          <p className="link">About</p>
-          <p className="link">Store</p>
+          <ThemeSwitch />
         </div>
         <div className="flex space-x-4 items-center">
           <p className="link">Gmail</p>
           <p className="link">Image</p>
-          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 cursor-pointer" />
+          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 cursor-pointer dark:hover:bg-white dark:hover:text-black" />
           <Avatar
             url={"https://avatars.githubusercontent.com/u/66429052?v=4"}
           />
@@ -51,18 +54,18 @@ export default function Home() {
 
       {/* body */}
 
-      <form className="flex flex-col items-center mt-40 flex-grow w-4/5">
+      <form className="flex flex-col items-center mt-24 md:mt-40 flex-grow w-4/5 ">
         <Image
           src="https://www.google.co.in/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
           height={100}
           width={300}
         />
-        <div className="flex w-full mt-5 hover:shadow-lg focus-within:shadow-lg max-w-sm  rounded-full border border-gray-200 px-5 py-3 items-center sm:max-w-xl lg:max-w-2xl">
-          <SearchIcon className="h-5  mr-3 text-gray-500" />
+        <div className="flex dark:bg-[#292A2D] w-full mt-5 hover:shadow-lg focus-within:shadow-lg max-w-sm  rounded-full border border-gray-200 px-5 py-3 items-center sm:max-w-xl lg:max-w-2xl">
+          <SearchIcon className="h-5  mr-3 text-gray-500 dark:text-white " />
           <input
             ref={serchInputRef}
             type="text"
-            className="focus:outline-none flex-grow "
+            className="focus:outline-none flex-grow bg-transparent "
           />
           <MicrophoneIcon className="h-5 " />
         </div>

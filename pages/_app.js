@@ -7,6 +7,7 @@ import {
 } from "@clerk/clerk-react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { ThemeProvider } from "next-themes";
 
 // Retrieve Clerk settings from the environment
 const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_FRONTEND_API;
@@ -34,11 +35,15 @@ function MyApp({ Component, pageProps }) {
       navigate={(to) => router.push(to)}
     >
       {publicPages.includes(router.pathname) ? (
-        <Component {...pageProps} />
+        <ThemeProvider attribute="class">
+          <Component {...pageProps} />
+        </ThemeProvider>
       ) : (
         <>
           <SignedIn>
-            <Component {...pageProps} />
+            <ThemeProvider attribute="class">
+              <Component {...pageProps} />
+            </ThemeProvider>
           </SignedIn>
           <SignedOut>
             <RedirectToSignIn />
