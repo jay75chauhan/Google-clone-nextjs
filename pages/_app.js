@@ -9,6 +9,20 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { ThemeProvider } from "next-themes";
 
+import ProgressBar from "@badrap/bar-of-progress";
+import Router from "next/router";
+
+const progress = new ProgressBar({
+  size: 5,
+  color: "#4285F4",
+  className: "z-50",
+  delay: 100,
+});
+
+Router.events.on("routeChangeStart", progress.start);
+Router.events.on("routeChangeComplete", progress.finish);
+Router.events.on("routeChangeError", progress.finish);
+
 // Retrieve Clerk settings from the environment
 const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_FRONTEND_API;
 const clerkSignInURL = process.env.NEXT_PUBLIC_CLERK_SIGN_IN;

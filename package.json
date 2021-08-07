@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@badrap/bar-of-progress": "^0.1.2",
     "@clerk/clerk-react": "^1.13.0",
     "@heroicons/react": "^1.0.1",
     "@tailwindcss/line-clamp": "^0.2.1",
